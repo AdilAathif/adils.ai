@@ -1,38 +1,207 @@
-.App {
+@font-face {
+  font-family: "robotoregular";
+  src: url("./components/assets/fonts/roboto/roboto-regular-webfont.woff2") format("woff2"), url("./components/assets/fonts/roboto/roboto-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* @font-face {
+  font-family: "robotomedium";
+  src: url("./components/assets/fonts/roboto/roboto-medium-webfont.woff2") format("woff2"), url("./components/assets/fonts/roboto/roboto-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+} */
+@font-face {
+  font-family: "robotobold";
+  src: url("./components/assets/fonts/roboto/roboto-bold-webfont.woff2") format("woff2"), url("./components/assets/fonts/roboto/roboto-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #000;
+}
+a{
+  text-decoration: none;
+}
+ul,ol{
+  list-style: none;
+}
+
+#nav header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+}
+#nav header h1.left{
+  width: 250px;
+}
+#nav header h1.left img{
+  display: block;
+  width: 100%;
+}
+#nav header ul{
+  display: flex;
+  align-items: center;
+}
+#nav header ul li:first-child{
+  margin-right: 20px;
+}
+#nav header ul li a{
+  font-family: 'Poppins', sans-serif;    
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: underline;
+}
+#nav header ul li span{
+  display: inline-flex;
+  padding: 5px 20px;
+  background: blue;
+  color: #fff;
+  align-items: center;
+  border-radius: 50px;
+  font-family: 'robotobold';
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#dash .wrapper{
+  padding: 0 70px;
+}
+#dash .wrapper .top{
+  margin-bottom: 10px;
+}
+#dash .wrapper .top p{
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #fff;
+  position: relative;
+}
+#dash .wrapper .top p::after{
+  content: '|';
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #fff;
+  background: #000;
+  width: 100%;
+  animation: typing 3s steps(50) alternate forwards, line 1s forwards;
+}
+/* #dash .wrapper .top p: */
+@keyframes typing {
+  to{
+  width: 63%;
+  content: '';
+}
+}
+@keyframes line {
+  50%{
+    color: transparent;
+  }
+}
+#dash .wrapper .middle{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#dash .wrapper .middle .image-box{
+  display: inline-block;
+  width: 512px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#dash .wrapper .middle .image-box img{
+  display: block;
+  width: 100%;
+  height: 341px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#dash .wrapper .bottom{
+  text-align: center;
+}
+#dash .wrapper .bottom .input-field{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0 15%;
+}
+#dash .wrapper .bottom .input-field input{
+  width: 100%;
+  padding: 20px;
+  border: none;
+  background: #2d2d2d;
+  color: #fff;
+  border-radius: 50px;
+  position: relative;
+}
+#dash .wrapper .bottom .input-field input::placeholder{
+  color: #fff;
+}
+#dash .wrapper .bottom .input-field input:focus{
+  border: none;
+  outline: 2px solid blue;
+}
+#dash .wrapper .bottom .input-field input[type=submit]{
+  width: 15%;
+  padding: 16px;
+  border: none;
+  background: blue;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 20px;
+  position: absolute;
+  right: 18.7%;
+  cursor: pointer;
+}
+.loading-bar{
+  width: 0px;
+  height: 8px;
+  background: blue;
+}
+.loading-text{
+  font-size: 18px;
+  text-align: left;
+  color: #fff;
+}
+.loading-bar-full{
+  width: 512px;
+  height: 8px;
+  background: blue;
+  transition: 15s;
+}
+.display-none{
+  display: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media all and (max-width:690px) {
+  #dash .wrapper .bottom .input-field input[type=submit]{
+    width: 25%;
+    right: 75px;
   }
-  to {
-    transform: rotate(360deg);
+  #dash .wrapper .bottom .input-field{
+    padding: 0;
+  }
+}
+@media all and (max-width:480px) {
+  #dash .wrapper{
+    padding: 0 30px;
+  }
+  #nav header{
+    padding: 30px 15px;
+  }
+  #nav header h1.left{
+    width: 110px;
+  }
+  #dash .wrapper .bottom .input-field input[type=submit]{
+    width: 30%;
+    right: 35px;
+    font-size: 15px;
+  }
+  #dash .wrapper .bottom .input-field input{
+    font-size: 10px;
+  }
+  #dash .wrapper .middle .image-box{
+    width: 100%;
+  }
+  #dash .wrapper .top p{
+    font-size: 13px;
   }
 }

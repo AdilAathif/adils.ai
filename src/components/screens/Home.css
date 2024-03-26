@@ -1,0 +1,223 @@
+#home{
+    height: 100vh ;
+    background: #000;
+}
+#home #main-block{
+    position: relative;
+}
+#home header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+}
+#home header h1.left{
+    display: inline-block;
+    width: 250px;
+}
+#home header h1.left img{
+    display: block;
+    width: 100%;
+}
+#home header ul{
+    display: flex;
+}
+#home header ul li:first-child{
+    /* margin-right: 15px; */
+}
+#home header ul li a{
+    display: inline-block;
+    padding: 10px 15px;
+    background: blue;
+    color: #fff;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;    
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+#home header ul li button{
+    padding: 10px 15px;
+    background: blue;
+    color: #fff;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;    
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+#home #hero{
+
+}
+#home #hero .wrapper{
+    padding: 30px 70px;
+    display: flex;
+}
+#home #hero .wrapper .left{
+    width: 50%;
+    padding-top: 70px;
+}
+#home #hero .wrapper .left span.top{
+    font-family: 'robotobold';
+    display: inline-block;
+    padding: 10px 20px;
+    background: blue;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 20px;
+}
+#home #hero .wrapper .left h1{
+    font-family: 'robotobold';
+    font-size: 60px;
+    color: #fff;
+}
+#home #hero .wrapper .left h1 span{
+    color: blue;
+}
+#home #hero .wrapper .left p{
+    font-family: 'Poppins', sans-serif;    
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+#home #hero .wrapper .right{
+    display: inline-block;
+    width: 50%;
+}
+#home #hero .wrapper .right img{
+    display: block;
+    width: 100%;
+}
+
+.over.active{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    background: none;
+    z-index: 2;
+    width: 100%;
+    backdrop-filter: blur(5px);
+}
+.form-field{
+    display: none;
+}
+.form-field.active{
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 30%;
+    text-align: center;
+    width: 100%;
+    padding: 0 35%;
+    background: none;
+}
+.form-field.active form{
+    width: 25%;
+    background: #c0c0ff;
+    padding: 40px;
+    border-radius: 10px;
+}
+.form-field.active form h1{
+    color: #000;
+    background: none;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.form-field.active form input{
+    width: 100%;
+    padding: 10px 2px;
+    border: 1px solid blue;
+    border-radius: 6px;
+    background: none;
+    margin-bottom: 20px;
+}
+.form-field.active form ul{
+    display: flex;
+    background: none;
+    justify-content: center;
+}
+.form-field.active form ul li{
+    background: none;
+    margin-right: 10px;
+}
+.form-field.active form ul li:last-child{
+    margin-right: 0;
+}
+.form-field.active form ul li button{
+    display: inline-block;
+    padding: 10px 20px;
+    background: #a1a1a1;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+.form-field.active form ul li:last-child button{
+    background: blue;
+}
+.form-field.active form ul li button:hover{
+    opacity: 0.8;
+}
+
+@media all and (max-width:980px) {
+    #home #hero .wrapper{
+        flex-direction: column;
+        text-align: center;
+    }
+    #home #hero .wrapper .left{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    #home #hero .wrapper .right{
+        width: 100%;
+    }
+}
+@media all and (max-width:768px) {
+    .form-field.active form{
+        width: 40%;
+    }
+    .form-field.active {
+        padding: 0 25%;
+    }
+}
+@media all and (max-width:480px){
+    .form-field.active{
+        padding: 0 15%;
+    }
+    .form-field.active form{
+        width: 55%;
+    }
+    #home #hero .wrapper{
+        padding: 0px;
+    }
+    #home header h1.left{
+        width: 120px;
+    }
+} 
+@media all and (max-width:390px) {
+    #home header{
+        padding: 30px 15px;
+    }
+    #home header ul li a{
+        font-size: 15px;
+        /* padding: 10px; */
+    }
+    #home header ul li button{
+        font-size: 15px;
+    }
+    #home #hero .wrapper .left h1{
+        font-size: 50px;
+    }
+    #home #hero .wrapper .left span.top{
+        font-size: 17px;
+    }
+    #home #hero .wrapper .left p{
+        font-size: 14px;
+    }
+
+    .form-field.active{
+        padding: 0 10%;
+    }
+}
